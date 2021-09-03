@@ -4,7 +4,7 @@
 
   const dispatch = createEventDispatcher();
 
-  const onKeydown = e => {
+  const onKeydown = (e) => {
     if (e.key == 'Enter' && !disabled) {
       dispatch('next');
     }
@@ -13,7 +13,9 @@
   $: disabled = $username.length == 0;
 </script>
 
-<input on:keydown={onKeydown} bind:value={$username} placeholder="What's your username?" />
-<button on:click={() => dispatch('next')} disabled={disabled}>
-  Choose username
-</button>
+<input
+  on:keydown={onKeydown}
+  bind:value={$username}
+  placeholder="What's your username?"
+/>
+<button on:click={() => dispatch('next')} {disabled}> Choose username </button>
