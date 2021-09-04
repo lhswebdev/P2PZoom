@@ -5,8 +5,8 @@
     "App.svelte"
   ],
   "sourcesContent": [
-    "<script>\n  import ChooseUsername from './ChooseUsername.svelte';\n  import ConnectOther from './ConnectOther.svelte';\n  import Call from './Call.svelte';\n  import { username } from './store.js';\n\n  let screens = [\n    ConnectOther,\n    Call\n  ];\n  let screenIdx = 0;\n  const nextScreen = () => {\n    if (screenIdx < screens.length - 1) screenIdx++;\n  };\n</script>\n\n<main>\n  <p>Your id is {$username}</p>\n  <svelte:component this={screens[screenIdx]} on:next={nextScreen} />\n</main>\n\n<style>\n  main {\n    text-align: center;\n    padding: 1em;\n    max-width: 240px;\n    margin: 0 auto;\n  }\n\n  h1 {\n    color: #ff3e00;\n    text-transform: uppercase;\n    font-size: 4em;\n    font-weight: 100;\n  }\n\n  @media (min-width: 640px) {\n    main {\n      max-width: none;\n    }\n  }\n</style>\n"
+    "<script>\n  import ChooseUsername from './ChooseUsername.svelte';\n  import ConnectOther from './ConnectOther.svelte';\n  import Call from './Call.svelte';\n  import { username } from './store.js';\n\n  let screens = [ConnectOther, Call];\n  let screenIdx = 0;\n  const nextScreen = () => {\n    if (screenIdx < screens.length - 1) screenIdx++;\n  };\n</script>\n\n<main>\n  <p>Your id is {$username}</p>\n  <svelte:component this={screens[screenIdx]} on:next={nextScreen} />\n</main>\n\n<style>\n  main {\n    text-align: center;\n    padding: 1em;\n    max-width: 240px;\n    margin: 0 auto;\n  }\n\n  @media (min-width: 640px) {\n    main {\n      max-width: none;\n    }\n  }\n</style>\n"
   ],
   "names": [],
-  "mappings": "AAsBE,IAAI,eAAC,CAAC,AACJ,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,GAAG,CACZ,SAAS,CAAE,KAAK,CAChB,MAAM,CAAE,CAAC,CAAC,IAAI,AAChB,CAAC,AASD,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AACzB,IAAI,eAAC,CAAC,AACJ,SAAS,CAAE,IAAI,AACjB,CAAC,AACH,CAAC"
+  "mappings": "AAmBE,IAAI,eAAC,CAAC,AACJ,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,GAAG,CACZ,SAAS,CAAE,KAAK,CAChB,MAAM,CAAE,CAAC,CAAC,IAAI,AAChB,CAAC,AAED,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AACzB,IAAI,eAAC,CAAC,AACJ,SAAS,CAAE,IAAI,AACjB,CAAC,AACH,CAAC"
 }
