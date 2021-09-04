@@ -4,7 +4,7 @@
 
   const dispatch = createEventDispatcher();
 
-  const onKeydown = e => {
+  const onKeydown = (e) => {
     if (e.key == 'Enter' && !disabled) {
       dispatch('next');
     }
@@ -16,8 +16,12 @@
 <input
   on:keydown={onKeydown}
   bind:value={$friendUsername}
-  placeholder="Who would you like to talk to?" />
+  placeholder="Who would you like to talk to?"
+/>
 
-<button on:click={() => dispatch('next')} disabled={$friendUsername.length == 0}>
+<button
+  on:click={() => dispatch('next')}
+  disabled={$friendUsername.length == 0}
+>
   Go!
 </button>
